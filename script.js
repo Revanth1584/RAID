@@ -1,71 +1,46 @@
-// Animation Sequence
-window.onload = () => {
-  setTimeout(() => {
-    document.getElementById("raidLogo").classList.remove("hidden");
-  }, 2500);
-  setTimeout(() => {
-    document.getElementById("intro").style.display = "none";
-    document.getElementById("dashboard").classList.remove("hidden");
-    updateDateTime();
-  }, 5000);
-};
+// Select root container
+const root = document.getElementById("root");
 
-// Show current date & time
-function updateDateTime() {
-  const now = new Date();
-  const formatted = now.toLocaleString("en-IN", {
-    timeZone: "Asia/Kolkata",
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit'
-  });
-  document.getElementById("datetime").innerText = formatted;
-  setTimeout(updateDateTime, 1000);
-}
+// Create main content container
+const container = document.createElement("div");
+container.style.padding = "40px";
+container.style.fontFamily = "Arial, sans-serif";
+container.style.color = "#fff";
+container.style.background = "linear-gradient(to bottom right, #1F2937, #111827)";
+container.style.minHeight = "100vh";
 
-// Store current selected unit
-let currentUnit = "";
+// Add RAID title
+const title = document.createElement("h1");
+title.textContent = "RAID Command Interface";
+title.style.fontSize = "36px";
+title.style.marginBottom = "20px";
+title.style.color = "#FACC15";
 
-function openUnit(unitName) {
-  currentUnit = unitName;
-  document.getElementById("unitTitle").innerText = unitName;
-  loadTasks();
-}
+// Add welcome message
+const subtitle = document.createElement("p");
+subtitle.textContent = "Welcome, Officer. You have access to the Rapid Action & Intelligence Directorate control panel.";
+subtitle.style.fontSize = "18px";
+subtitle.style.marginBottom = "30px";
 
-function addTask() {
-  const input = document.getElementById("taskInput");
-  const taskText = input.value.trim();
-  if (!taskText || !currentUnit) return;
+// Add interaction button
+const button = document.createElement("button");
+button.textContent = "Access Command Module";
+button.style.padding = "10px 20px";
+button.style.fontSize = "16px";
+button.style.backgroundColor = "#2563EB";
+button.style.color = "#fff";
+button.style.border = "none";
+button.style.borderRadius = "6px";
+button.style.cursor = "pointer";
+button.addEventListener("click", () => {
+  alert("🔐 Secure Access Granted. Redirecting to Command Module...");
+  // Redirect or logic can be placed here
+});
 
-  const allTasks = JSON.parse(localStorage.getItem("raidTasks") || "{}");
-  if (!allTasks[currentUnit]) allTasks[currentUnit] = [];
-  allTasks[currentUnit].push({
-    text: taskText,
-    time: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
-  });
-  localStorage.setItem("raidTasks", JSON.stringify(allTasks));
+// Append all to container
+container.appendChild(title);
+container.appendChild(subtitle);
+container.appendChild(button);
 
-  input.value = "";
-  loadTasks();
-}
-
-function loadTasks() {
-  const allTasks = JSON.parse(localStorage.getItem("raidTasks") || "{}");
-  const tasks = allTasks[currentUnit] || [];
-  const taskList = document.getElementById("taskList");
-  taskList.innerHTML = "";
-
-  tasks.slice().reverse().forEach((task, index) => {
-    const div = document.createElement("div");
-    div.innerHTML = `
-      <div style="margin-bottom:10px;padding:8px;border:1px solid #ccc;border-radius:5px;">
-        <strong>🗂 ${task.time}</strong><br />${task.text}
-      </div>
-    `;
-    taskList.appendChild(div);
-  });
-}
+// Inject into root
+root.appendChild(container);
