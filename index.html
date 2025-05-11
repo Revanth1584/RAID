@@ -3,52 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RAID - भारत सरकार</title>
+  <title>RAID Command Interface</title>
+  <meta name="description" content="Rapid Action & Intelligence Directorate" />
+  <meta name="author" content="RAID" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="RAID Command Interface" />
+  <meta property="og:description" content="Rapid Action & Intelligence Directorate" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/447adb60-a114-454d-9d89-41aab2233375/id-preview-fe2d1d65--28451426-0358-430d-af3c-35a0a2de3b33.lovable.app-1746944596679.png" />
+
+  <!-- Twitter Meta -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@RAID_Official" />
+  <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/447adb60-a114-454d-9d89-41aab2233375/id-preview-fe2d1d65--28451426-0358-430d-af3c-35a0a2de3b33.lovable.app-1746944596679.png" />
+
+  <link rel="icon" href="/assets/raid-icon.png" type="image/png" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="assets/ashoka-emblem.png">
+  <link rel="stylesheet" crossorigin href="/assets/index.css" />
+  <script type="module" crossorigin src="/assets/index.js"></script>
 </head>
 <body>
-  <!-- Intro Animation Screen -->
-  <div id="intro">
-    <img src="assets/ashoka-emblem.png" alt="Ashoka Emblem" class="emblem" />
-    <h1 class="emblem-text">भारत सरकार</h1>
-    <img src="assets/raid-logo.png" alt="RAID Logo" class="logo hidden" id="raidLogo" />
-  </div>
+  <div id="root"></div>
 
-  <!-- Main Dashboard -->
-  <div id="dashboard" class="hidden">
-    <header>
-      <img src="assets/ashoka-emblem.png" alt="Emblem" class="header-emblem" />
-      <h1>RAID - Rapid Action & Intelligence Division</h1>
-      <span id="datetime"></span>
-    </header>
-
-    <nav>
-      <ul>
-        <li onclick="openUnit('Mathematics Command')">Mathematics Command</li>
-        <li onclick="openUnit('Physics Recon Division')">Physics Recon Division</li>
-        <li onclick="openUnit('Electronics & Devices Corps')">Electronics & Devices Corps</li>
-        <li onclick="openUnit('Linguistics & Intel Cell')">Linguistics & Intel Cell</li>
-        <li onclick="openUnit('Engineering Workshop Section')">Engineering Workshop Section</li>
-        <li onclick="openUnit('Physical Analysis Lab')">Physical Analysis Lab</li>
-        <li onclick="openUnit('Cyber Ops & Scripting Unit')">Cyber Ops & Scripting Unit</li>
-        <li onclick="openUnit('Communications Training')">Communications Training</li>
-        <li onclick="openUnit('Systems Integration Lab')">Systems Integration Lab</li>
-        <li onclick="openUnit('Information Systems Section')">Information Systems Section</li>
-      </ul>
-    </nav>
-
-    <main>
-      <h2 id="unitTitle">Select a Unit</h2>
-      <input type="text" id="taskInput" placeholder="Enter Task or Note..." />
-      <button onclick="addTask()">Add Task</button>
-      <div id="taskList"></div>
-    </main>
-
-    <footer>
-      © RAID | भारत सरकार | All Rights Reserved
-    </footer>
-  </div>
+  <!-- RAID Intelligence Script -->
+  <script type="module" src="https://cdn.gpteng.co/gptengineer.js"></script>
+  
+  <!-- Badge -->
+  <a id="raid-badge" target="_blank" href="https://raid.gov.in/command-portal">
+    <span style="color: #A1A1AA;">Command by</span>
+    <svg width="60" height="12" viewBox="0 0 116 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- SVG content here if needed -->
+    </svg>
+  </a>
 
   <script src="script.js"></script>
 </body>
