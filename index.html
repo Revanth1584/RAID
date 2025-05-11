@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAID - भारत सरकार</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/ashoka-emblem.png">
+</head>
+<body>
+  <!-- Intro Animation Screen -->
+  <div id="intro">
+    <img src="assets/ashoka-emblem.png" alt="Ashoka Emblem" class="emblem" />
+    <h1 class="emblem-text">भारत सरकार</h1>
+    <img src="assets/raid-logo.png" alt="RAID Logo" class="logo hidden" id="raidLogo" />
+  </div>
+
+  <!-- Main Dashboard -->
+  <div id="dashboard" class="hidden">
+    <header>
+      <img src="assets/ashoka-emblem.png" alt="Emblem" class="header-emblem" />
+      <h1>RAID - Rapid Action & Intelligence Division</h1>
+      <span id="datetime"></span>
+    </header>
+
+    <nav>
+      <ul>
+        <li onclick="openUnit('Mathematics Command')">Mathematics Command</li>
+        <li onclick="openUnit('Physics Recon Division')">Physics Recon Division</li>
+        <li onclick="openUnit('Electronics & Devices Corps')">Electronics & Devices Corps</li>
+        <li onclick="openUnit('Linguistics & Intel Cell')">Linguistics & Intel Cell</li>
+        <li onclick="openUnit('Engineering Workshop Section')">Engineering Workshop Section</li>
+        <li onclick="openUnit('Physical Analysis Lab')">Physical Analysis Lab</li>
+        <li onclick="openUnit('Cyber Ops & Scripting Unit')">Cyber Ops & Scripting Unit</li>
+        <li onclick="openUnit('Communications Training')">Communications Training</li>
+        <li onclick="openUnit('Systems Integration Lab')">Systems Integration Lab</li>
+        <li onclick="openUnit('Information Systems Section')">Information Systems Section</li>
+      </ul>
+    </nav>
+
+    <main>
+      <h2 id="unitTitle">Select a Unit</h2>
+      <input type="text" id="taskInput" placeholder="Enter Task or Note..." />
+      <button onclick="addTask()">Add Task</button>
+      <div id="taskList"></div>
+    </main>
+
+    <footer>
+      © RAID | भारत सरकार | All Rights Reserved
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
