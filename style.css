@@ -1,0 +1,146 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #111;
+}
+
+/* Intro Animation */
+#intro {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom right, #fffbe6, #e6f0ff);
+}
+
+.emblem {
+  width: 100px;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+.emblem-text {
+  font-size: 24px;
+  margin: 10px 0;
+  opacity: 0;
+  animation: fadeIn 3s 1s forwards;
+}
+
+.logo {
+  width: 120px;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeIn 3s 2.5s forwards;
+}
+
+/* Hide class */
+.hidden {
+  display: none;
+}
+
+/* Dashboard */
+#dashboard {
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #002366;
+  color: white;
+  padding: 10px 20px;
+}
+
+.header-emblem {
+  width: 40px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 15px 0;
+  gap: 10px;
+}
+
+nav li {
+  background-color: #e8f0fe;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+nav li:hover {
+  background-color: #c3dafc;
+}
+
+main {
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+main h2 {
+  margin-bottom: 10px;
+}
+
+#taskInput {
+  padding: 8px;
+  width: 80%;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 8px 15px;
+  background-color: #0055a5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #003f7f;
+}
+
+#taskList {
+  margin-top: 10px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  #taskInput {
+    width: 100%;
+  }
+}
